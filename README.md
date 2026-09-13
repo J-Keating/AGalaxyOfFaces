@@ -2,6 +2,9 @@
 
 A single-page website for a face-painting business. Open `index.html` directly in a browser to preview it; there is no build step or software to install.
 
+- **Live website:** https://j-keating.github.io/AGalaxyOfFaces/
+- **GitHub repository:** https://github.com/J-Keating/AGalaxyOfFaces
+
 ## Editing the website content
 
 The four files in `content` are the editable source of truth:
@@ -45,13 +48,17 @@ Do not put SMTP, Gmail, or other email account passwords in this file. Anything 
 
 This is the best fit for the site as built. GitHub Pages hosts the static page, supports a custom domain and HTTPS, and keeps the source portable. Formspree handles the only server-side job: delivering contact enquiries. The tradeoff is that updates are made by editing files or using GitHub's web editor.
 
-Publishing outline:
+This site is published from the root of the `main` branch. Pushing a new commit to `main` automatically updates GitHub Pages.
 
-1. Create a GitHub repository and upload `index.html`, the final images, and optionally this README.
-2. In the repository, open **Settings > Pages**.
-3. Choose **Deploy from a branch**, select the main branch and the root folder, then save.
-4. Test the generated `github.io` address.
-5. Connect a custom domain in the Pages settings when ready.
+To publish future local changes:
+
+1. Regenerate `index.html` from the files in `content`.
+2. Preview and test the page locally.
+3. Run `git add .`.
+4. Run `git commit -m "Describe the website update"`.
+5. Run `git push`.
+
+GitHub will redeploy the live address automatically. Connect a custom domain in **Settings > Pages** when ready.
 
 ### Canva Websites
 
