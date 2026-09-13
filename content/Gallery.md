@@ -44,11 +44,11 @@ Only images at the root of `Examples` are published. Files in `Examples/Unused` 
 - **Caption:** Shimmering unicorn
 - **Alt text:** Pastel unicorn face design with blue, pink, and silver glitter
 
-### Sparkling crown
+### Classic tiger
 
-- **Image:** Examples/Final6.jpg
-- **Caption:** Sparkling crown
-- **Alt text:** Delicate silver and pastel crown design with glitter accents
+- **Image:** Examples/Final14.jpg
+- **Caption:** Classic tiger
+- **Alt text:** Smiling child with a bright orange full-face tiger design
 
 ### Blue shark
 
@@ -68,11 +68,11 @@ Only images at the root of `Examples` are published. Files in `Examples/Unused` 
 - **Caption:** Butterfly wings
 - **Alt text:** Pink butterfly design with glitter and painted wing details
 
-### Purple princess
+### Bright butterfly
 
-- **Image:** Examples/Final11.jpg
-- **Caption:** Purple princess
-- **Alt text:** Purple and white princess crown design painted across the forehead and cheeks
+- **Image:** Examples/Final13.jpg
+- **Caption:** Bright butterfly
+- **Alt text:** Full-face pink and orange butterfly with bold black outlines
 
 ### Young wizard
 
@@ -80,14 +80,14 @@ Only images at the root of `Examples` are published. Files in `Examples/Unused` 
 - **Caption:** Young wizard
 - **Alt text:** Round black wizard glasses and a red lightning-bolt face design
 
-### Bright butterfly
+### Purple princess
 
-- **Image:** Examples/Final13.jpg
-- **Caption:** Bright butterfly
-- **Alt text:** Full-face pink and orange butterfly with bold black outlines
+- **Image:** Examples/Final11.jpg
+- **Caption:** Purple princess
+- **Alt text:** Purple and white princess crown design painted across the forehead and cheeks
 
-### Classic tiger
+### Sparkling crown
 
-- **Image:** Examples/Final14.jpg
-- **Caption:** Classic tiger
-- **Alt text:** Smiling child with a bright orange full-face tiger design
+- **Image:** Examples/Final6.jpg
+- **Caption:** Sparkling crown
+- **Alt text:** Delicate silver and pastel crown design with glitter accents
