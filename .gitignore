@@ -1,0 +1,5 @@
+*.zip
+Examples/Unused/
+MacyImages/Unused/
+.DS_Store
+Thumbs.db

@@ -1,0 +1,480 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A Galaxy of Faces brings imaginative face painting to parties, festivals, and community events in Seattle and the Eastside.">
+  <meta property="og:image" content="Examples/Final4.jpg">
+  <title>A Galaxy of Faces | Face Painting in Seattle and the Eastside</title>
+  <script>
+    (() => {
+      const param = new URLSearchParams(window.location.search).get("scoutTheme");
+      const theme =
+        param || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      document.documentElement.setAttribute("data-theme", theme);
+    })();
+  </script>
+  <style>
+    :root {
+      color-scheme: light;
+      --cp-bg: #f7f4ef;
+      --cp-bg-elevated: #fcfbf8;
+      --cp-surface: #ffffff;
+      --cp-surface-soft: #f5f5f5;
+      --cp-border: #dedede;
+      --cp-border-strong: #919191;
+      --cp-text: #242424;
+      --cp-text-muted: #5c5c5c;
+      --cp-text-soft: #6f6f6f;
+      --cp-accent: #b11f4b;
+      --cp-accent-hover: #9a1a41;
+      --cp-accent-soft: rgba(177, 31, 75, 0.08);
+      --cp-accent-fg: #ffffff;
+      --cp-success: #16a34a;
+      --cp-danger: #dc2626;
+      --cp-warning: #f59e0b;
+      --cp-link: #0078d4;
+      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.12);
+      --cp-overlay: rgba(255, 255, 255, 0.8);
+      --cp-panel: rgba(255, 255, 255, 0.86);
+      --cp-panel-strong: rgba(255, 255, 255, 0.96);
+      --cp-sheen: rgba(255, 255, 255, 0.55);
+      --cp-highlight: rgba(177, 31, 75, 0.12);
+    }
+
+    html[data-theme="dark"] {
+      color-scheme: dark;
+      --cp-bg: #3d3b3a;
+      --cp-bg-elevated: #343231;
+      --cp-surface: #292929;
+      --cp-surface-soft: #2e2e2e;
+      --cp-border: #474747;
+      --cp-border-strong: #5f5f5f;
+      --cp-text: #dedede;
+      --cp-text-muted: #919191;
+      --cp-text-soft: #b0b0b0;
+      --cp-accent: #fd8ea1;
+      --cp-accent-hover: #fb7b91;
+      --cp-accent-soft: rgba(253, 142, 161, 0.14);
+      --cp-accent-fg: #1a1a1a;
+      --cp-success: #4ade80;
+      --cp-danger: #f87171;
+      --cp-warning: #fbbf24;
+      --cp-link: #4da6ff;
+      --cp-shadow: 0 18px 48px rgba(0, 0, 0, 0.32);
+      --cp-overlay: rgba(41, 41, 41, 0.88);
+      --cp-panel: rgba(41, 41, 41, 0.72);
+      --cp-panel-strong: rgba(41, 41, 41, 0.96);
+      --cp-sheen: rgba(255, 255, 255, 0.04);
+      --cp-highlight: rgba(253, 142, 161, 0.12);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background: var(--cp-bg);
+      color: var(--cp-text);
+      font-family: "Segoe UI", Aptos, Calibri, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.6;
+    }
+    img { display: block; width: 100%; }
+    a { color: inherit; }
+    button, input, select, textarea { font: inherit; }
+    .shell { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
+    .eyebrow {
+      margin: 0 0 12px;
+      color: var(--cp-accent);
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+    h1, h2, h3 { line-height: 1.08; letter-spacing: 0; }
+    h2 { margin: 0; font-family: Georgia, "Times New Roman", serif; font-size: clamp(2rem, 4vw, 3.5rem); }
+    p { color: var(--cp-text-muted); }
+
+    .site-header {
+      position: absolute;
+      z-index: 10;
+      top: 0;
+      left: 0;
+      width: 100%;
+      color: var(--cp-text);
+    }
+    .nav { display: flex; min-height: 76px; align-items: center; justify-content: space-between; gap: 24px; }
+    .brand { font-family: Georgia, "Times New Roman", serif; font-size: 1.25rem; font-weight: 700; text-decoration: none; }
+    .nav-links { display: flex; align-items: center; gap: 24px; }
+    .nav-links a { font-size: 0.95rem; font-weight: 700; text-decoration: none; }
+    .nav-cta { border-bottom: 2px solid var(--cp-text); }
+
+    .hero {
+      min-height: min(90vh, 820px);
+      display: grid;
+      align-items: end;
+      padding: 0;
+      background-image: linear-gradient(90deg, var(--cp-panel-strong), var(--cp-panel), var(--cp-sheen)), url("Examples/Final4.jpg");
+      background-position: center;
+      background-size: cover;
+    }
+    .hero-content { max-width: 780px; padding: 170px 0 88px; }
+    .hero h1 {
+      margin: 0;
+      color: var(--cp-text);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(3.6rem, 10vw, 7.8rem);
+      font-weight: 700;
+      overflow-wrap: anywhere;
+    }
+    .hero p { max-width: 620px; margin: 24px 0 32px; color: var(--cp-text); font-size: clamp(1.05rem, 2vw, 1.3rem); }
+    .button {
+      display: inline-flex;
+      min-height: 48px;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border: 1px solid var(--cp-accent);
+      border-radius: 0.625rem;
+      background: var(--cp-accent);
+      color: var(--cp-accent-fg);
+      font-weight: 800;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .button:hover { background: var(--cp-accent-hover); }
+
+    section { padding: 96px 0; }
+    .section-head { display: grid; grid-template-columns: 1fr 1fr; align-items: end; gap: 48px; margin-bottom: 40px; }
+    .section-head p { max-width: 540px; margin: 0; }
+    .gallery { columns: 3 280px; column-gap: 16px; }
+    .work { position: relative; break-inside: avoid; margin: 0 0 16px; overflow: hidden; border-radius: 16px; background: var(--cp-surface-soft); }
+    .work img { height: auto; object-fit: contain; transition: transform 500ms ease; }
+    .work:hover img { transform: scale(1.025); }
+    .work span {
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      left: 16px;
+      padding: 12px 14px;
+      border-radius: 0.625rem;
+      background: var(--cp-panel-strong);
+      color: var(--cp-text);
+      font-weight: 800;
+    }
+
+    .offer { background: var(--cp-bg-elevated); }
+    .offer-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--cp-border); }
+    .offer-item { padding: 32px 32px 32px 0; border-bottom: 1px solid var(--cp-border); }
+    .offer-item + .offer-item { padding-left: 32px; border-left: 1px solid var(--cp-border); }
+    .offer-item h3 { margin: 0 0 10px; font-size: 1.25rem; }
+    .offer-item p { margin: 0; }
+
+    .about-grid { display: grid; grid-template-columns: 0.85fr 1.15fr; align-items: center; gap: 72px; }
+    .about-photo { aspect-ratio: 4 / 5; object-fit: cover; border-radius: 16px; }
+    .about-copy p { max-width: 620px; font-size: 1.05rem; }
+    .details { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+    .detail { padding: 8px 12px; border: 1px solid var(--cp-border); border-radius: 0.625rem; background: var(--cp-surface); color: var(--cp-text); font-weight: 700; }
+    .story { margin-top: 96px; }
+    .story-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .story-grid img { aspect-ratio: 4 / 3; height: 100%; object-fit: cover; border-radius: 16px; }
+
+    .contact { background: var(--cp-bg-elevated); }
+    .contact-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 72px; }
+    .contact-copy p { max-width: 430px; }
+    form { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    label { display: grid; gap: 7px; color: var(--cp-text); font-size: 0.9rem; font-weight: 800; }
+    label.full { grid-column: 1 / -1; }
+    input, select, textarea {
+      width: 100%;
+      border: 1px solid var(--cp-border-strong);
+      border-radius: 0.625rem;
+      outline: none;
+      background: var(--cp-surface);
+      color: var(--cp-text);
+      padding: 12px 14px;
+    }
+    input:focus, select:focus, textarea:focus { border-color: var(--cp-accent); box-shadow: 0 0 0 3px var(--cp-accent-soft); }
+    textarea { min-height: 140px; resize: vertical; }
+    .form-actions { grid-column: 1 / -1; display: flex; align-items: center; gap: 16px; }
+    .form-note { margin: 0; font-size: 0.88rem; }
+
+    footer { padding: 28px 0; border-top: 1px solid var(--cp-border); }
+    .footer-row { display: flex; justify-content: space-between; gap: 24px; }
+    footer p { margin: 0; font-size: 0.9rem; }
+
+    @media (max-width: 800px) {
+      .nav-links a:not(.nav-cta) { display: none; }
+      .hero { min-height: 82vh; }
+      .hero-content { padding: 150px 0 64px; }
+      .hero h1 { font-size: clamp(3.2rem, 18vw, 5rem); }
+      section { padding: 72px 0; }
+      .section-head, .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+      .offer-grid { grid-template-columns: 1fr; }
+      .offer-item, .offer-item + .offer-item { padding: 24px 0; border-left: 0; }
+      .about-photo { max-height: 560px; }
+      .story { margin-top: 72px; }
+      .story-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 540px) {
+      .shell { width: min(100% - 24px, 1120px); }
+      .brand { max-width: 180px; font-size: 1.05rem; }
+      form { grid-template-columns: 1fr; }
+      .story-grid { grid-template-columns: 1fr; }
+      .form-actions, .footer-row { align-items: stretch; flex-direction: column; }
+      .button { width: 100%; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .work img { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="nav shell" aria-label="Main navigation">
+      <a class="brand" href="#top">A Galaxy of Faces</a>
+      <div class="nav-links">
+        <a href="#work">Gallery</a>
+        <a href="#about">About</a>
+        <a class="nav-cta" href="#contact">Contact Us</a>
+      </div>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="hero-content shell">
+        <p class="eyebrow">Face painting for joyful occasions</p>
+        <h1>A Galaxy of Faces</h1>
+        <p>Bold colour, tiny details, and a little bit of magic for birthdays, festivals, school events, and celebrations.</p>
+        <a class="button" href="#contact">Contact Us <span aria-hidden="true">&#8595;</span></a>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">A few favourites</p>
+            <h2>Every face becomes a new story.</h2>
+          </div>
+          <p>From quick festival designs to special birthday requests, each look is adapted to the person in the chair.</p>
+        </div>
+        <div class="gallery">
+          <figure class="work">
+            <img src="Examples/Final1.jpg" alt="Smiling child with a silver, white, and black wolf face design">
+            <span>Silver wolf</span>
+          </figure>
+          <figure class="work">
+            <img src="Examples/Final2.jpg" alt="Pink snake cheek design outlined in gold" loading="lazy">
+            <span>Pink snake</span>
+          </figure>
+          <figure class="work">
+            <img src="Examples/Final3.jpg" alt="Bright green coiled snake painted across one cheek" loading="lazy">
+            <span>Green snake</span>
+          </figure>
+          <figure class="work">
+            <img src="Examples/Final4.jpg" alt="Child posing with a colourful full-face tiger design" loading="lazy">
+            <span>Rainbow tiger</span>
+          </figure>
+          <figure class="work">
+            <img src="Examples/Final5.jpg" alt="Pastel unicorn face design with blue, pink, and silver glitter" loading="lazy">
+            <span>Shimmering unicorn</span>
+          </figure>
+          <figure class="work">
+            <img src="Examples/Final6.jpg" alt="Delicate silver and pastel crown design with glitter accents" loading="lazy">
+            <span>Sparkling crown</span>
+          </figure>
+          <figure class="work">
+            <img src="Examples/Final7.jpg" alt="Metallic blue shark painted across one cheek" loading="lazy">
+            <span>Blue shark</span>
+          </figure>
+          <figure class="work">
+            <img src="Examples/Final9.jpg" alt="Colourful glittering mask design in yellow, pink, blue, and white" loading="lazy">
+            <span>Festival mask</span>
+          </figure>
+          <figure class="work">
+            <img src="Examples/Final10.jpg" alt="Pink butterfly design with glitter and painted wing details" loading="lazy">
+            <span>Butterfly wings</span>
+          </figure>
+          <figure class="work">
+            <img src="Examples/Final11.jpg" alt="Purple and white princess crown design painted across the forehead and cheeks" loading="lazy">
+            <span>Purple princess</span>
+          </figure>
+          <figure class="work">
+            <img src="Examples/Final12.jpg" alt="Round black wizard glasses and a red lightning-bolt face design" loading="lazy">
+            <span>Young wizard</span>
+          </figure>
+          <figure class="work">
+            <img src="Examples/Final13.jpg" alt="Full-face pink and orange butterfly with bold black outlines" loading="lazy">
+            <span>Bright butterfly</span>
+          </figure>
+          <figure class="work">
+            <img src="Examples/Final14.jpg" alt="Smiling child with a bright orange full-face tiger design" loading="lazy">
+            <span>Classic tiger</span>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="offer">
+      <div class="shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">Good occasions</p>
+            <h2>Bring colour to the gathering.</h2>
+          </div>
+          <p>Friendly, flexible face painting for small celebrations and busy public events.</p>
+        </div>
+        <div class="offer-grid">
+          <article class="offer-item">
+            <h3>Birthday parties</h3>
+            <p>A memorable activity with designs matched to the age group and party theme.</p>
+          </article>
+          <article class="offer-item">
+            <h3>Festivals & fairs</h3>
+            <p>Fast, eye-catching options designed to keep the queue moving and smiling.</p>
+          </article>
+          <article class="offer-item">
+            <h3>Community events</h3>
+            <p>A warm, creative addition to school days, fundraisers, and neighbourhood celebrations.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="about-grid shell">
+        <img class="about-photo" src="MacyImages/HeadShot.jpg" alt="Portrait of Macy Keating, the artist behind A Galaxy of Faces" loading="lazy">
+        <div class="about-copy">
+          <p class="eyebrow">Meet the artist</p>
+          <h2>Patient hands. A vivid imagination.</h2>
+          <p>Hi, I’m Macy, the face painter behind A Galaxy of Faces. I love turning a favourite animal, superhero, flower, or completely original idea into something a child can proudly wear.</p>
+          <p>I create a relaxed, friendly experience and use professional face paints with clean tools and careful hygiene practices.</p>
+          <div class="details" aria-label="Service qualities">
+            <span class="detail">Professional face paints</span>
+            <span class="detail">Friendly & patient</span>
+            <span class="detail">Custom designs</span>
+          </div>
+        </div>
+      </div>
+      <div class="story shell">
+        <div class="section-head">
+          <div>
+            <p class="eyebrow">How it started</p>
+            <h2>Creativity that grew into a craft.</h2>
+          </div>
+          <p>These snapshots trace the practice, play, and hands-on event work behind A Galaxy of Faces.</p>
+        </div>
+        <div class="story-grid">
+          <img src="MacyImages/History1.jpg" alt="Macy experimenting with a blue and silver face-paint design" loading="lazy">
+          <img src="MacyImages/History2.jpg" alt="Macy wearing a blue and silver dotted face-paint design" loading="lazy">
+          <img src="MacyImages/History3.jpg" alt="Macy and another child showing matching red animal face designs" loading="lazy">
+          <img src="MacyImages/History4.jpg" alt="Macy and another child showing red and orange animal face designs" loading="lazy">
+          <img src="MacyImages/History5.jpg" alt="Macy carefully painting an orange-and-white design at an outdoor event" loading="lazy">
+          <img src="MacyImages/History6.jpg" alt="Macy beside a child wearing a finished orange tiger design" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section class="contact" id="contact">
+      <div class="contact-grid shell">
+        <div class="contact-copy">
+          <p class="eyebrow">Bookings & questions</p>
+          <h2>Tell me what you’re planning.</h2>
+          <p>Share the date, location, and approximate number of guests. I’ll reply with availability and the details you need.</p>
+        </div>
+        <form id="contact-form">
+          <label>
+            Your name
+            <input name="name" autocomplete="name" required>
+          </label>
+          <label>
+            Email
+            <input type="email" name="email" autocomplete="email" required>
+          </label>
+          <label>
+            Event date
+            <input type="date" name="date">
+          </label>
+          <label>
+            Event type
+            <select name="event">
+              <option>Birthday party</option>
+              <option>Festival or fair</option>
+              <option>School or community event</option>
+              <option>Other</option>
+            </select>
+          </label>
+          <label class="full">
+            Tell me about the event
+            <textarea name="message" required placeholder="Location, number of guests, timing, and anything else that would be helpful..."></textarea>
+          </label>
+          <div class="form-actions">
+            <button class="button" type="submit">Send enquiry <span aria-hidden="true">&#8599;</span></button>
+            <p class="form-note" id="form-note">This opens your email app with the details filled in.</p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-row shell">
+      <p>&copy; <span id="year"></span> A Galaxy of Faces</p>
+      <p>Face painting for parties and events</p>
+    </div>
+  </footer>
+
+  <script>
+    const businessEmail = "YOUR_EMAIL@example.com";
+    const formEndpoint = "";
+    const contactForm = document.querySelector("#contact-form");
+    const formNote = document.querySelector("#form-note");
+
+    document.querySelector("#year").textContent = new Date().getFullYear();
+
+    contactForm.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const data = new FormData(contactForm);
+
+      if (formEndpoint) {
+        formNote.textContent = "Sending...";
+        try {
+          const response = await fetch(formEndpoint, {
+            method: "POST",
+            body: data,
+            headers: { Accept: "application/json" }
+          });
+          if (!response.ok) throw new Error("Form submission failed");
+          contactForm.reset();
+          formNote.textContent = "Thanks! Your enquiry has been sent.";
+        } catch {
+          formNote.textContent = "That did not send. Please try again or email us directly.";
+        }
+        return;
+      }
+
+      const subject = `Face painting enquiry from ${data.get("name")}`;
+      const body = [
+        `Name: ${data.get("name")}`,
+        `Email: ${data.get("email")}`,
+        `Event date: ${data.get("date") || "Not specified"}`,
+        `Event type: ${data.get("event")}`,
+        "",
+        data.get("message")
+      ].join("\n");
+
+      if (businessEmail.startsWith("YOUR_EMAIL")) {
+        formNote.textContent = "Add the business email address in index.html before publishing.";
+        return;
+      }
+
+      window.location.href = `mailto:${businessEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  </script>
+</body>
+</html>
