@@ -20,12 +20,11 @@ This file controls the booking section, enquiry form, contact details, and form 
 
 ## Form delivery
 
-- **Mode:** Formspree
-- **Formspree endpoint:** [For example: https://formspree.io/f/xxxxxxx]
-- **Hosted form URL:** https://j-keating.github.io/AGalaxyOfFaces/ask.html
+- **Mode:** Jotform RSVP&Forms Canva app
+- **Jotform form:** [Add after the form is created in Canva]
 - **Email subject:** Face painting enquiry from {name}
 
-The Canva website should link its **Check availability** call to the hosted form URL. Formspree sends submissions from that page without opening an email application.
+The Jotform RSVP&Forms app should embed the enquiry form directly in the Canva Website. Jotform stores submissions and emails the configured notification recipient without opening an email application or requiring a separate customer-facing page.
 
 ## Form fields
 
