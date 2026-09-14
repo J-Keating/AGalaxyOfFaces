@@ -20,13 +20,12 @@ This file controls the booking section, enquiry form, contact details, and form 
 
 ## Form delivery
 
-Choose one mode and remove the brackets from the selected value.
-
-- **Mode:** [Formspree or Email draft]
+- **Mode:** Formspree
 - **Formspree endpoint:** [For example: https://formspree.io/f/xxxxxxx]
+- **Hosted form URL:** https://j-keating.github.io/AGalaxyOfFaces/ask.html
 - **Email subject:** Face painting enquiry from {name}
 
-`Formspree` sends from the page without opening an email app. `Email draft` opens the visitor's email application and requires them to press Send.
+The Canva website should link its **Check availability** call to the hosted form URL. Formspree sends submissions from that page without opening an email application.
 
 ## Form fields
 
